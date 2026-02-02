@@ -90,3 +90,68 @@ o Registro
 o Gestión de tareas
 o Perfil de usuario
 o Dashboard admin
+
+
+
+
+
+
+//// API Configuration
+const API_URL = "http://localhost:3000";
+
+// Check if already logged in
+document.addEventListener("DOMContentLoaded", () => {
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  if (currentUser) {
+    redirectToDashboard(currentUser.role);
+  }
+});
+
+// Login Form Handler
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const errorAlert = document.getElementById("errorAlert");
+
+  try {
+    // Fetch users from JSON server
+    const response = await fetch(`${API_URL}/users`);
+    const users = await response.json();
+
+    // Find user
+    const user = users.find(
+      (u) => u.email === email && u.password === password,
+    );
+
+    if (user) {
+      // Store user in localStorage
+      localStorage.setItem("currentUser", JSON.stringify(user));
+
+      // Redirect based on role
+      redirectToDashboard(user.role);
+    } else {
+      showError("Email o contraseña incorrectos");
+    }
+  } catch (error) {
+    console.error("Error during login:", error);
+    showError(
+      "Error al conectar con el servidor. Asegúrate de que JSON Server esté ejecutándose.",
+    );
+  }
+});
+
+function showError(message) {
+  const errorAlert = document.getElementById("errorAlert");
+  errorAlert.textContent = message;
+  errorAlert.classList.remove("d-none");
+}
+
+function redirectToDashboard(role) {
+  if (role === "admin") {
+    window.location.href = "admin.html";
+  } else {
+    window.location.href = "user.html";
+  }
+}
