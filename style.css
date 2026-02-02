@@ -1,0 +1,175 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Franja azul oscura */
+.top-nav {
+    background-color: #004a99;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+/* Logo */
+.top-left img {
+    height: 38px;
+}
+
+/* Buscador */
+.search {
+    display: flex;
+    width: 45%;
+}
+
+.search input {
+    width: 100%;
+    padding: 9px;
+    border: none;
+    outline: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.search button {
+    padding: 9px 15px;
+    border: none;
+    background-color: #ffcc00;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Derecha */
+.top-right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+/* Categorías */
+.category-nav {
+    background-color: #0072ce;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+
+}
+
+.category-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 14px;
+    
+}
+
+.category-nav a:hover {
+    text-decoration: underline;
+}
+.fondo1 img{
+    size:100%;
+    width: 100%;
+
+}
+
+.seccion1{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 15px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.seccion1 li {
+    list-style: none;
+    background-color: white;
+    border-radius: 6px;
+    padding: 10px 5px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.seccion1 li img{
+    background-color: white;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.sect {
+    background-image: url(./imgAlkosto/ak-bg-bigtop.webp);
+    background-size: cover;
+    background-position: center;
+    padding: 400px 0 30px;
+}
+
+.info-bar{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: #f5f5f5;
+    padding: 12px 0;
+    font-size: 13px;
+}
+.info-bar a {
+    text-decoration: none;
+    color: #004a99;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.info-bar a:hover{
+    text-decoration: underline;
+}
+.ofertaspapanoel .titulo{
+    list-style: none;
+    padding: 15px;
+}
+
+.ofertaspapanoel .papanoel{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 90%;
+    margin: 0 auto;
+    list-style: none;
+
+}
+
+.toys .juguetesmejores img{
+
+    padding-top:80px ;
+    padding-bottom:40px; ;
+    list-style: none;
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
+
+}
+.descuentazos h2{
+    padding-left: 80px;
+}
+
+.linkvertodo{
+    text-align: right;
+    padding-right: 80px;
+}
+
+.descuentazos2 .tarjedescuentazos{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 90%;
+    margin: 0 auto;
+    list-style: none;
+    align-items: center;
+    padding-top: 20px;
+
+}
